@@ -5,7 +5,13 @@ This repository contains synthetic datasets for testing and comparing parameter-
 \[
 Ax = b
 \]
-![Linear matrix A visualization](A_coefficients.png)
+
+<p align="center">
+  <img src="A_coefficients.png"
+       alt="Linear matrix A visualization"
+       width="500">
+</p>
+
 
 Each dataset includes 300 samples, 20 input parameters, and 30 model outputs. Parameter values range from −1 to 1.
 The matrix A is visualized below. Parameters 0-2 control Outputs 0-7; Parameters 2-4 control Outputs 8-13. The rest variables are dominated by the rest parameters.
