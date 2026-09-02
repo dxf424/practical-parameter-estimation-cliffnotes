@@ -14,7 +14,7 @@ Ax = b
 
 
 Each dataset includes 300 samples, 20 input parameters, and 30 model outputs. Parameter values range from −1 to 1.
-The matrix A is visualized above. Parameters 0-2 control Outputs 0-7; Parameters 2-4 control Outputs 8-13. The rest variables are dominated by the rest parameters.
+The matrix A is visualized above. Parameters 0-2 dominate Outputs 0-7; Parameters 2-4 dominate Outputs 8-13. The rest variables are dominated by the rest parameters. This design is similar to what is commonly seen in the sensitivity map of climate model PPEs. 
 
 
 ## Purpose
