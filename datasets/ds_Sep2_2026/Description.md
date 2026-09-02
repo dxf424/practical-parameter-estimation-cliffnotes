@@ -33,8 +33,8 @@ Each dataset contains:
 - `x_true.csv` — ground-truth parameter vector <---- The answer
 - `Y.csv` — simulated model outputs
 - `y_true.csv` — ground-truth observation vector
-- `.nc` file — complete dataset, including the above 4, the coefficient matrix A and other helper information. 
-Within the nc file, there is x_b and y_b, which are used to generate structural error.
+- `.nc` file — complete dataset, including the above 4 elements, the coefficient matrix A and other useful information. 
+There are x_b and y_b within the nc file, which are used to generate structural error (see below).
 
 ## Dataset Dimensions
 
