@@ -63,9 +63,9 @@ See below on which elements are replaced
 ## Naming entails info on obs and structural error
 For the dataset name linear_obserr_scale02_strerr_y20_y25_y29:
 
-- linear:             The model is linear
-- obsess_scale02:     Gaussian white noise of std of 0.2 is added to Ax_true to get the final y_true. This is to simulate the observational uncertainty
-- strerr_y20_y25_y29:  the 20th, 25th, and 29th elements of y_true are replaced by those of y_b. 
+- linear: - The model is linear
+- obsess_scale02: - Gaussian white noise of std of 0.2 is added to Ax_true to get the final y_true. This is to simulate the observational uncertainty
+- strerr_y20_y25_y29: - the 20th, 25th, and 29th elements of y_true are replaced by those of y_b. 
 
 
 These datasets are intended for benchmarking optimization algorithms, inverse-problem solvers, uncertainty analysis, and other parameter-estimation techniques.
