@@ -47,6 +47,11 @@ _KNOWN_DESCRIPTIONS = {
     "param_group_id": "Which block-diagonal sensitivity group each input belongs to (structure="
                        "'block_triangular'); that group's params are the strong, dedicated "
                        "drivers of the matching output_group_id outputs.",
+    "param_group_membership": "(input x group) 0/1 matrix: 1 where that input is a strong, "
+                              "dedicated driver of that group's outputs (structure="
+                              "'block_triangular'). Param groups may OVERLAP, so an input can be "
+                              "a strong driver of several output groups; param_group_id only "
+                              "records the first such group.",
     "output_group_id": "Which block-diagonal sensitivity group each output belongs to (structure="
                         "'block_triangular'); driven mainly by the matching param_group_id params.",
     "coefficients": "MODEL PARAMETER (linear): coefficient matrix B (input x output), Y = X @ B.",

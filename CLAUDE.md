@@ -94,3 +94,22 @@ input look inert. utils/plotting.py averages over random baselines instead.
 notebooks/forward_models_walkthrough.ipynb explains both new models with visuals and
 demonstrates the shared machinery + the contest workflow end to end.
 
+
+
+2026 August 31st
+Structure 3 (block_triangular) now allows OVERLAPPING param groups. Outputs are still a
+contiguous partition (output_group_sizes), but the param side takes exactly one of:
+    param_group_sizes -- sizes, contiguous and disjoint (what it always did), or
+    param_groups      -- explicit index lists that may share params, e.g.
+                         [[0,1,2], [2,3,4]] makes x2 a strong driver of BOTH output
+                         groups. linear.sliding_param_groups(n_groups, group_size,
+                         stride) builds the sliding case.
+The strong/small/zero rule is now applied PER PARAMETER instead of per group: for output
+group h, a param in group h is strong (membership in h wins even if it also sits in a
+later group), a param in an earlier group only is small, a param in only later groups is
+exactly zero. A param in no group at all is inert everywhere -- allowed on purpose.
+generate_coefficients_block_triangular returns a 4th value, param_group_membership
+(n_params x n_groups, 0/1), which is also saved to the .nc; param_group_id keeps only the
+FIRST group per param (-1 if none) and is just a plotting label once groups overlap.
+Note the RNG draw order changed (now one draw per output block), so regenerating an old
+disjoint dataset with the same seed gives statistically identical but not identical numbers.
